@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/community.css">
+    <!--    <script src="/js/jquery-3.5.1.js"></script>-->
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:fragment="nav">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">社区</span>
+                </button>
+                <a class="navbar-brand" href="/">社区</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="搜索问题">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+<!--                    <li th:if="${session.user !=null}">-->
+<!--                        <a href="/publish">发布</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="/profile/replies">通知 <span class="badge" th:text="${session.unreadCount}"></span></a>-->
+<!--                    </li>-->
+<!--                    <li class="dropdown" th:if="${session.user !=null}">-->
+<!--                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
+<!--                           aria-expanded="false">-->
+<!--                            <span th:text="${session.user.getName()}"></span>-->
+<!--                            <span class="caret"></span></a>-->
+<!--                        <ul class="dropdown-menu">-->
+<!--                            <li><a href="/profile/question">我的问题</a></li>-->
+<!--                            <li><a href="/logout">退出登录</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+                    <li>
+                        <a href="https://gitee.com/oauth/authorize?client_id=41357a8fe319f1712b6490bcc726380121cfc5723919677b6ed6cc51c75098ba&redirect_uri=http://localhost:8080/callback&response_type=code">码云登录</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <h2><span class="glyphicon glyphicon-list" aria-hidden="true"></span>发现</h2>
+            <hr>
+            <div th:if="maYunUser!=null">
+                <span th:text="${maYunUser.name}"></span>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <h3>热门话题</h3>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
